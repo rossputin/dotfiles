@@ -4,6 +4,9 @@ export ZSH=$HOME/.dotfiles
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Projects
 
+# your documents folder that we can `d [tab]` to
+export DOCUMENTS=~/Documents
+
 # JAVA_HOME for archaic mvn and ant etc
 export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/
 
