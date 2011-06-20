@@ -1,5 +1,10 @@
 set noswapfile
 
+" Solarized
+syntax enable
+set background=dark
+colorscheme solarized
+
 " ----------------------------------------------------------------------------
 "  Text Formatting
 " ----------------------------------------------------------------------------
@@ -83,3 +88,4 @@ function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,s :call StripWhitespace ()<CR>
+
