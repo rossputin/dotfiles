@@ -1,0 +1,2 @@
+#compdef ha
+_files -W $HACKING -/
