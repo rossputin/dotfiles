@@ -1,2 +1,2 @@
-alias t='tmux -u'
-alias tls='tmux ls'
+alias m='tmux -u'
+alias mls='tmux ls'
