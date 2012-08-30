@@ -7,7 +7,7 @@ export PROJECTS=~/Projects
 # your documents folder that we can `d [tab]` to
 export DOCUMENTS=~/Documents
 
-# your hacking folder than we can `ha [tab]` to
+# your hacking folder that we can `ha [tab]` to
 export HACKING=~/Hacking
 
 # your processes folder that we can `pr [tab]` to
