@@ -1,6 +1,6 @@
 alias flap='tmux attach -t flap'
 alias flap-init='tmuxinator flap'
-alias flap-help='flap-help.sh'
+alias flap-help='cat ~/Processes/FLAP/help.txt'
 alias flap-bheap='flap-basic.sh ~/Processes/FLAP/BHEAP/todo.txt 5'
 alias flap-appcave='flap-basic.sh ~/Processes/FLAP/APPCAVE/todo.txt 5'
 alias flap-readme='flap-basic.sh ~/Processes/FLAP/readme.txt 60'
