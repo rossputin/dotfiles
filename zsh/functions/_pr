@@ -1,0 +1,2 @@
+#compdef pr
+_files -W $PROCESSES -/

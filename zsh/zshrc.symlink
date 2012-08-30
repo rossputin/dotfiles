@@ -10,6 +10,9 @@ export DOCUMENTS=~/Documents
 # your hacking folder than we can `ha [tab]` to
 export HACKING=~/Hacking
 
+# your processes folder that we can `pr [tab]` to
+export PROCESSES=~/Processes
+
 # ensure iterm2 and tmux are all 256 colours for solarized
 export TERM=xterm-256color
 
