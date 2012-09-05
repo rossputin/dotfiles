@@ -16,6 +16,9 @@ export PROCESSES=~/Processes
 # your dotfiles folder that we can `dot [tab` to
 export DOT=~/.dotfiles
 
+# your sites folder that we can `si [tab]` to
+export SITES=~/Sites
+
 # ensure iterm2 and tmux are all 256 colours for solarized
 export TERM=xterm-256color
 
