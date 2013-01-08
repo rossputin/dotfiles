@@ -103,3 +103,29 @@ function! StripWhitespace ()
 endfunction
 map ,s :call StripWhitespace ()<CR>
 
+
+" ---------------------------------------------------------------------------
+"  My shortcouts, maps, abbreviations
+" ---------------------------------------------------------------------------
+
+"Load the current buffer into Firefox
+abbrev ff :! open -a firefox.app %:p<cr>
+
+"Map some change directories
+nmap ,a :cd ~/Projects/appcave<cr>:e.<cr>
+nmap ,d :cd ~/Desktop<cr>:e.<cr>
+nmap ,b :cd ~/Projects/bheap<cr>:e.<cr>
+
+"Save time swap shift colon for space
+nmap <space> :
+
+"Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+"Shortcut for NERDTreeToggle
+nmap ,nt :NERDTreeToggle
+
+let NERDTreeShowHidden=1
+
