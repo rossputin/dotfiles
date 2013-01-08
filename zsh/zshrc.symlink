@@ -20,7 +20,7 @@ export DOT=~/.dotfiles
 export SITES=~/Sites
 
 # ensure iterm2 and tmux are all 256 colours for solarized
-export TERM=xterm-256color
+export TERM=screen-256color
 
 # make solarized work with dir colours etc
 # note, .dir_colors is sourced from the dotfiles solarized directory
