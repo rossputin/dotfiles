@@ -101,7 +101,8 @@ directory_name(){
 
 export PROMPT=$'\nrossputin in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
-  export RPROMPT="%{$fg[blue]%}$(notes_prompt \*BHEAP)%{$reset_color%} %{$fg[green]%}$(notes_prompt \*APPCAVE)%{$reset_color%}  %{$fg_bold[red]%}$(todo_prompt +next)%{$reset_color%}"
+  export RPROMPT="%{$fg_bold[red]%}$(todo_prompt +next)%{$reset_color%}"
+  #export RPROMPT="%{$fg[blue]%}$(notes_prompt \*BHEAP)%{$reset_color%} %{$fg[green]%}$(notes_prompt \*APPCAVE)%{$reset_color%}  %{$fg_bold[red]%}$(todo_prompt +next)%{$reset_color%}"
 }
 
 precmd() {
