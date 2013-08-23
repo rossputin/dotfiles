@@ -54,71 +54,34 @@ need_push () {
   fi
 }
 
-rb_prompt(){
+ruby_version() {
   if (( $+commands[rbenv] ))
   then
-	  echo "%{$fg_bold[yellow]%}$(rbenv version | awk '{print $1}')%{$reset_color%}"
-	else
-	  echo ""
+    echo "$(rbenv version | awk '{print $1}')"
+  fi
+
+  if (( $+commands[rvm-prompt] ))
+  then
+    echo "$(rvm-prompt | awk '{print $1}')"
   fi
 }
 
-# This keeps the number of todos always available the right hand side of my
-# command line. I filter it to only count those tagged as "+next", so it's more
-# of a motivation to clear out the list.
-todo_count(){
-  if $(which todo.sh &> /dev/null)
-#todo(){
-#  if (( $+commands[todo.sh] ))
+rb_prompt() {
+  if ! [[ -z "$(ruby_version)" ]]
   then
-    num=$(echo $(todo.sh ls $1 | wc -l))
-    let todos=num-2
-    if [ $todos != 0 ]
-    then
-      echo "$todos"
-    else
-      echo ""
-    fi
+    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
   else
     echo ""
   fi
 }
 
-function todo_prompt() {
-  local COUNT=$(todo_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
-
-function notes_count() {
-  if [[ -z $1 ]]; then
-    local NOTES_PATTERN="TODO|FIXME|HACK";
-  else
-    local NOTES_PATTERN=$1;
-  fi
-  grep -Rn "$NOTES_PATTERN" ~/Processes 2>/dev/null | wc -l | sed 's/ //g'
-}
-
-function notes_prompt() {
-  local COUNT=$(notes_count $1);
-  if [ $COUNT != 0 ]; then
-    echo "$1: $COUNT";
-  else
-    echo "";
-  fi
-}
-
-directory_name(){
+directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\nrossputin in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
-  export RPROMPT="%{$fg_bold[red]%}$(todo_prompt +next)%{$reset_color%}"
-  #export RPROMPT="%{$fg[blue]%}$(notes_prompt \*BHEAP)%{$reset_color%} %{$fg[green]%}$(notes_prompt \*APPCAVE)%{$reset_color%}  %{$fg_bold[red]%}$(todo_prompt +next)%{$reset_color%}"
+  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
 precmd() {
