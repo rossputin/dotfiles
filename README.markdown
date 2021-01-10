@@ -1,3 +1,5 @@
+** DEPRECEATED - I have been using Fish shell for many years now! **
+
 # holman does dotfiles
 
 ## dotfiles
